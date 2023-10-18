@@ -1,0 +1,61 @@
+LINK TO FIGMA - https://www.figma.com/file/x6oiMuAYHr2jphGOYNYrU9/Untitled?type=design&node-id=0%3A1&mode=design&t=HzJRS7jHKlLAopl1-1
+
+IMPORTANT ABOUT SUBMISSIONS: I understand from you that you already know how to use GIT version control, so I would love to use your knowledge. You need to put your homework on a github page. The link to your github project must be placed in moodle MD - VUE MD 1. I am waiting for the works until today (18.10) 23:59.
+
+1. Component - App
+	- Import four components - HeaderComponent, NavigationComponent, HomeComponent & AboutMeComponent;
+	- All components of this must be shown based on the drawn structure in figma;
+	- The component must be divided into two columns, where the navigation component will be in the first, and both imported components in the second (See sample in Figma)
+	- HomeComponent & NavigationComponent are hidden by default.
+	- When the user presses the "LOGIN" button, all components are visible (HomeComponent & AboutMeComponent based on active navigation element).
+	- When the user clicks on the "LOGOUT" button, only the HeaderComponent is visible.
+
+2. Component - HeaderComponent
+Contains:
+	- You can also add your own logo (look for the attached logo.svg file).
+	- Name of your free choice;
+	- Avatar: it must be a circle with a background color of your choice;
+	- Username:
+	- You need to create a new object named user with the following keys:
+		- name: "<your name>";
+		- surname: "<your surname>";
+		- code: "<your ViA code>".
+	- A new computed value full_name must be created. full_name should return your full name using the user name and surname keys from the user object.
+	- You must display this full_name variable in the HTML where your first and last name are expected.
+	- Button "LOGIN" or "LOGOUT" depending on the status:
+		- By pressing the "LOGIN" button:
+			- the system `alert` notification window appears with the question: "Do you want to log in?" with options, "Yes" & "Cancel".
+				- Pressing ``Yes'' takes place the following actions:
+					- changes the name of the button to "LOGOUT";
+					- shows the avatar (circle with random color) and next to it your first and last name (variable full_name);
+					- header background-color is changed to your chosen color;
+					- emit an event that would notify the parent components that the user has logged in
+				- By pressing `Cancel` everything remains as it was
+			- By pressing the "LOGOUT" button:
+				- the system `alert` notification window appears with the question: "Do you want to log out?" with options, "Yes" & "Cancel".
+					- Pressing `Yes' takes place the following actions
+						- the name of the button changes to "LOGIN";
+						- hides the avatar and the user's full name;
+						- change header background-color back to default value.
+						- raise an event to notify parent components that the user has logged out
+
+3. Component - NavigationComponent
+	- two buttons named HOME and ABOUT ME should be added;
+	- when pressing the HOME button, the HomeComponent must be displayed and the AboutMeComponent component must be deleted (so that the user cannot see it through the inspect element);
+	- by pressing the ABOUT ME button, the AboutMeComponent must be displayed and the HomeComponent component must be deleted (so that the user cannot see it through the inspect element);
+	- for each button you need to add a class named "active" then if that button is active (see Figma example)
+	- the "HOME" button must be active by default;
+	- **Hard nut** Turn the navigation button into a separate functional component.
+
+4. Component - HomeComponent
+	- contains one <h1> tag with the text value "HOME".
+
+5. Component - AboutMeComponent
+	- a new variable object called user must be defined with the following keys:
+		- name: "<your name>"
+		- surname: "<your surname>"
+		- code: "<your ViA code>"
+	- <h1> element with text value "ABOUT ME";
+	- <h3> element with the name value of the user key of the object;
+	- <h3> element with the surname value of the object user key;
+	- <h3> element with the code value of the object user key;

@@ -1,0 +1,62 @@
+LINKS UZ FIGMA - https://www.figma.com/file/x6oiMuAYHr2jphGOYNYrU9/Untitled?type=design&node-id=0%3A1&mode=design&t=HzJRS7jHKlLAopl1-1
+
+SVARĪGI PAR DARBU IESŪTĪŠANU: Kā es no jums sapratu, ka jūs jau mākat izmantot GIT versiju kontroli, tāpēc, labprāt izmantotu jūsu zināšanas. Jums mājasdarbs ir jāievieto github lapā. Saite uz jūsu github projektu ir jāievieto moodle MD - VUE MD 1. Lekcija - github projektu linki. Darbus gaidu līdz šodienas (18.10) 23:59.
+
+1. Komponente - App
+	- Importēt četras komponentes - HeaderComponet, NavigationComponent, HomeComponent & AboutMeComponent;
+	- Visas šī komponentes ir jāparāda balstoties uz uzzīmēto struktūru;
+    - Komponente ir jāsadala divās kolonās kur pirmajā atradīsies navigācijas komponente, bet otrajā abas importētās komponentes (Skat. paraugu Figmā)
+    - HomeComponent & NavigationComponent pēc noklusējuma ir paslēptas.
+    - Kad lietotājs uzspiež uz pogas "LOGIN" ir redzamas visas komponentes.
+    - Kad lietotājs uzspiež uz pogas "LOGOUT" ir redzama tikai HeaderComponet.
+
+2. Komponente - HeaderComponent
+	Satur: 
+		- Logo (meklēt pievienoto logo.svg failu) varat arī pievienot paši savu 
+		- Nosaukums pēc jūsu brīvas izvēles;
+		- Avataru: tam jābūt aplim ar background krāsu pēc jūsu izvēles;
+		- Lietotāja vārds un uzvārds:
+			- Jums ir jāizveido jauns objekts ar nosaukumu user ar sekojošām atslēgām:
+				- name: "<jūsu vārds>";
+				- surname: "<jūsu uzvārds>";
+				- code: "<jūsu ViA kods>".
+			- Jāizveido jauna computed vērtība full_name. full_name ir jātgriež jūsu pilns vārds izmantojot objekta user name un surname atslēgas.
+			- Jums šis full_name mainīgias ir jāparāda HTML vietā kur paredzēts jūsu vārds un uzvārds.
+		- Poga "LOGIN" vai "LOGOUT" atkarībā no statusa:
+			- Nospiežot pogu "LOGIN":
+                - parādās sistēmas `alert` paziņojuma logs ar jautājumu: "Vai vēlaties ielogoties?" ar iespējām, "Yes" & "Cancel".
+                    - Nospiežot `Yes` notiek sekojošas darbības:
+                        - nomainās pogas nosaukumu uz "LOGOUT";
+                        - parāda avataru (aplis ar random krāsu) un blakus jūsu vārds un uzvārds (mainīgais full_name);
+                        - hedera background-color tiek nomainīta uz jūsu izvēlētu krāsu;
+                        - izvadīt notikumu, kas paziņotu vecāku komponentēm, ka lietotājs ir ielogojies
+                    - Nospiežot `Cancel` viss paliek kā bija
+			- Nospiežot pogu "LOGOUT":
+                - parādās sistēmas `alert` paziņojuma logs ar jautājumu: "Vai vēlaties izrakstīties?" ar iespējām, "Yes" & "Cancel".
+                    - Nospiežot `Yes` notiek sekojošas darbības
+                        - nomainās pogas nosaukums uz "LOGIN";
+                        - paslēpj avataru un lietotāja pilno vārdu;
+                        - nomaina hedera background-color atpakaļ uz noklusējuma vērtību.
+                        - izvadīt notikumu, kas paziņotu vecāku komponentēm, ka lietotājs ir izrakstījies
+
+3. Komponente - NavigationComponent
+    - jāpievieno divas pogas ar nosaukumiem HOME un ABOUT ME;
+    - nospiežot pogu HOME ir jāparāda HomeComponent un jāizdzēš (tā lai lietotājs to nevar ieraudzīt caur inspect element) AboutMeComponent komponente;
+    - nospiežot pogu ABOUT ME ir jāparāda AboutMeComponente un jāizdzēš (tā lai lietotājs to nevar ieraudzīt caur inspect element) HomeComponent komponente;
+    - katrai pogai ir jāpievieno klase ar nosaukumu "active", tad ja šī poga ir aktīva (skatīt Figma piemēru)
+    - pēc noklusējuma aktīvai ir jābūt pogai "HOME";
+    - **Cietais rieksts** Pārvērst navigācijas pogu par atsevišķu funkcionālu komponenti.
+
+4. Komponente - HomeComponent
+	- satur vienu <h1> tagu ar teksta vērtību "HOME".
+
+5. Komponente - AboutMeComponent 
+	- jādefinē jauns mainīgias objekts ar nosaukumu user ar sekojošām atslēgām:
+		- name: "<jūsu vārds>";
+		- surname: "<jūsu uzvārds>";
+		- code: "<jūsu ViA kods>".
+	- <h1> elements ar teksta vērtību "ABOUT ME";
+	- <h3> elements ar objekta user atslēgas name vērtību;
+	- <h3> elements ar objekta user atslēgas surname vērtību;
+	- <h3> elements ar objekta user atslēgas code vērtību; 
+
